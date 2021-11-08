@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 //指针就是地址【虚拟地址】；
-//指针变量：存放地址的变量 new(type)
+//指针变量：存放地址的变量 new(type)  例如：不同类型的指针 *int *string *bool
 
 type student struct {
 	id int
