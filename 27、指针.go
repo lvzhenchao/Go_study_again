@@ -40,7 +40,10 @@ func main()  {
 	fmt.Printf("指针变量p3的值为：%v, *p3的值为：%v\n", p3, *p3)
 
 	p4 :=new(student)
-	fmt.Printf("%v", p4)
+	fmt.Printf("%v\n", p4)
+
+	p5 := new(int)
+	fmt.Printf("%T,%v",p5,p5)
 
 
 
