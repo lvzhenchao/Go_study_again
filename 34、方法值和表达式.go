@@ -33,11 +33,11 @@ func main()  {
 	f2 := o.Sub
 	fmt.Println(f1,f2,f1(),f2())//0x6d7c40 0x6d7c80 579 333
 
-	fmt.Println("===表达式形式的调用===")
+	fmt.Println("===方法表达式的调用===")
 	f3 := operate.Add
-	res1 := f3(o)
+	res1 := f3(o)//传值
 
 	f4 := (*operate).Sub
-	res2 := f4(&o)
+	res2 := f4(&o)//传值
 	fmt.Println(res1, res2)
 }
