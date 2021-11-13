@@ -33,6 +33,7 @@ func main()  {
 	str := "go语言error的接口"
 	e := fmt.Errorf("这里是错误信息，对应的错误为：%v", str)
 	fmt.Println(e.Error())
+	fmt.Println(e)
 
 	fmt.Println("===函数调用使用===")
 
