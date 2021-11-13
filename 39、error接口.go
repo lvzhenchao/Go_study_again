@@ -28,6 +28,7 @@ func main()  {
 	fmt.Println("===基本使用===")
 	err := errors.New("这是一个错误信息")//实例化
 	fmt.Println(err.Error())//调用实话化后的方法
+	fmt.Println(err)//调用实话化后的方法
 
 	str := "go语言error的接口"
 	e := fmt.Errorf("这里是错误信息，对应的错误为：%v", str)
@@ -40,6 +41,7 @@ func main()  {
 		fmt.Println(res)
 		return
 	}
+	fmt.Println(err.Error())
 	fmt.Println(err)
 
 }
