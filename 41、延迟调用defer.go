@@ -19,6 +19,7 @@ func main()  {
 	fmt.Println("===defer与匿名函数结合使用===")
 	deferTest1()
 	deferTest2()
+	//区别是压入栈的时候，带没带参数
 
 }
 
