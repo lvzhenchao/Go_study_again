@@ -22,6 +22,12 @@ func main()  {
 	// 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
 	b := []byte("Golang")
 	fmt.Printf("%T\n", b)
+	c := []byte("ABC€")
+	fmt.Println(c) // [65 66 67 226 130 172]
+	s := string([]byte{65, 66, 67, 226, 130, 172})
+	fmt.Println(s) // ABC€
+
+
 
 	file1 := CreateFile1(path)
 	fmt.Println(file1)
