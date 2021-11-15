@@ -19,6 +19,10 @@ import (
 func main()  {
 	path := "E:/GoPath/src/Go_study_again/go.txt"
 	//path := "E:\\GoPath\\src\\Go_study_again"
+	// 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
+	b := []byte("Golang")
+	fmt.Printf("%T", b)
+
 	file1 := CreateFile1(path)
 	fmt.Println(file1)
 }
