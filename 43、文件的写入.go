@@ -20,18 +20,18 @@ func main()  {
 	path := "E:/GoPath/src/Go_study_again/go.txt"
 	//path := "E:\\GoPath\\src\\Go_study_again"
 	// 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
-	b := []byte("Golang")
-	fmt.Printf("b类型：%T\n", b)
+	//b := []byte("Golang")
+	//fmt.Printf("b类型：%T\n", b)
 
 	//这个是类型转换，将字符串“ABC”转为[]byte类型
-	c := []byte("ABC€")
-	fmt.Println(c) // [65 66 67 226 130 172]
-	s := string([]byte{65, 66, 67, 226, 130, 172})
-	fmt.Println(s) // ABC€
-
-	d := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
-	fmt.Printf("d的类型：%T\n", d)
-	fmt.Println(d)
+	//c := []byte("ABC€")
+	//fmt.Println(c) // [65 66 67 226 130 172]
+	//s := string([]byte{65, 66, 67, 226, 130, 172})
+	//fmt.Println(s) // ABC€
+	//
+	//d := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
+	//fmt.Printf("d的类型：%T\n", d)
+	//fmt.Println(d)
 
 
 	file1 := CreateFile1(path)
