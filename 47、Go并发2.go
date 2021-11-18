@@ -38,7 +38,7 @@ func main()  {
 func running02()  {
 	for i:=0; i<10; i++ {
 		fmt.Println("执行的Go程1", i)
-		if i > 6 {//退出
+		if i > 6 {//一般方法退出
 			return
 		}
 	}
@@ -47,7 +47,7 @@ func running02()  {
 func running03()  {
 	for i:=0; i<10; i++ {
 		fmt.Println("执行的Go程2", i)
-		if i > 3 {//退出
+		if i > 3 {//专用方法退出
 			runtime.Goexit()
 		}
 	}
