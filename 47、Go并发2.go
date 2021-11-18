@@ -14,6 +14,7 @@ import (
 
 	//runtime.GOMAXPROCS：用来设置可以并行计算CPU核数的最大值
 
+	//3个子进程，1个主进程
 func main()  {
 	fmt.Println("计算机的CPU个数：", runtime.NumCPU())
 	runtime.GOMAXPROCS(8)//计算机底层会默认1~8的范围，不管超出这个范围
