@@ -25,7 +25,7 @@ func main()  {
 	}()
 
 	//主程序接收channl
-	for i:=0; i<10; i++ {//发送了10次，也得接收10次
+	for i:=0; i<10; i++ {//发送了10次，也得接收10次；如果接收处次数多，会造成死锁；
 		num := <- c
 		fmt.Println("num=", num)
 		time.Sleep(time.Microsecond*300)
