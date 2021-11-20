@@ -72,7 +72,7 @@ func recvData1()  {
 }
 
 func recvData2()  {
-	for data := range ch{//for-range 会一直阻塞读取channel中的数据，知道channel关闭才会退出
+	for data := range ch{//for-range 会一直阻塞读取channel中的数据，直到channel关闭才会退出
 		fmt.Println("读取到数据为：", data)
 	}
 	fmt.Println("子go程recvData2()执行结束")
