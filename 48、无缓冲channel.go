@@ -10,6 +10,8 @@ import (
 //无缓冲通道：指在接收前没有能力保存任何值的通道；
 	//发送和接收同时准备好，才能完成发送和接收操作
 
+	//里面只能有一个数据存在，除非被接受了
+
 func main()  {
 	c := make(chan int)//定义一个无缓冲的channel;另一种写法：make(chan int, 0)
 	fmt.Printf("变量c的类型：%T; 长度为：%v; 变量为：%v\n", c, len(c), cap(c))
