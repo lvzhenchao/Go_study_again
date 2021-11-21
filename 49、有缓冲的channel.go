@@ -20,6 +20,8 @@ import (
 	//关闭后，可以继续从channel接收数据
 	//对于nil channel，无论收发都会阻塞
 
+	//len(ch)求取缓冲区剩余元素的个数；cap(ch)求取缓冲区元素容量大小
+
 var ch chan int
 var flag = false
 
