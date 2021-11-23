@@ -31,8 +31,12 @@ func (c *Computer)run(operate string)(status bool)  {
 func main()  {
 	car := Car{"长城","越野"}
 	run(&car)//实现了多态；注意：传递的变量是car的地址
+	run(new(Car))
+
 	computer := Computer{"华为",16}
 	run(&computer)
+
+	run(new(Computer))
 }
 
 //定义一个普通的函数，函数的参数为接口类型
