@@ -20,7 +20,7 @@ var mutex  sync.Mutex
 func main()  {
 	go person01("hello")
 	go person02("world")
-	//此时会乱序
+	//未加锁，此时会乱序
 
 	for{
 		if f1 == true && f2 == true {
