@@ -45,10 +45,10 @@ func main()  {
 	fmt.Printf("指针变量p3的值为：%v, *p3的值为：%v\n", p3, *p3)
 
 	p4 :=new(student)
-	fmt.Printf("%v\n", p4)
+	fmt.Printf("指针变量结构体%v\n", p4)
 
 	p5 := new(int)
-	fmt.Printf("%T,%v",p5,p5)
+	fmt.Printf("指针变量整形%T,%v",p5,p5)
 
 
 
