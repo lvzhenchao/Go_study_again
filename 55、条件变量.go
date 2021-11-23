@@ -24,7 +24,7 @@ import (
 var cond sync.Cond//定义条件变量
 
 func main()  {
-	cond.L = new(sync.Mutex)//初始haul条件变量的锁
+	cond.L = new(sync.Mutex)//初始化条件变量的锁
 	buf := make(chan int, 3)//生产者消费者模型的缓冲区
 
 	rand.Seed(time.Now().UnixNano())//初始化随机种子
