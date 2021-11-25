@@ -21,19 +21,25 @@ type Student struct {
 }
 
 func main()  {
-	//初始化结构体
+	//1、初始化结构体
 	var s1 Student = Student{1,"阿香",0,"北京"}
 	fmt.Printf("s1的类型：%T, 数据为：%v\n", s1, s1)
 
-	//初始化：单独给部分字段赋值
+	//2、初始化：单独给部分字段赋值
 	s2 := Student{name:"小明", sex:1}
 	fmt.Println(s2)
 
-	//初始化
+	//3、初始化
 	s3 := Student{}
 	s3.sex = 0
 	s3.name = "小鱼"
 	fmt.Println(s3)
+
+	//4、指针初始化
+	s4 := new(Student)
+	s4.name = "指针名称"
+	s4.sex = 1
+	fmt.Printf("指针化的初始化类型：%T,值为：%v\n", s4,s4)
 
 	fmt.Println("=====结构体使用=====")
 
