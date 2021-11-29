@@ -114,7 +114,7 @@ func (s *Server)Start() error  {
 	//}
 
 	//Uber 的 Go 语言编程规范中提到该模式时，建议定义一个 Option 接口
-	
+
 	//type options struct {
 	//	cache  bool
 	//	logger *zap.Logger
