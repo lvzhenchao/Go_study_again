@@ -29,7 +29,7 @@ func main()  {
 func producer(ch chan<- int)  {
 	for i:=0; i<10; i++ {
 		fmt.Printf("生产者第%v条数据\n", i+1)
-		ch <- i
+		ch <- i+1
 		time.Sleep(time.Second*1)
 	}
 	close(ch)
