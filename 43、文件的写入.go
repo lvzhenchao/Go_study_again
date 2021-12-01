@@ -18,7 +18,6 @@ import (
 //writeAt//指定位置写入数据
 
 func main()  {
-	path := "E:/GoPath/src/Go_study_again/go.txt"
 	//path := "E:\\GoPath\\src\\Go_study_again"
 	// 这里不能写成 b := []byte{"Golang"}，这里是利用类型转换。
 	//b := []byte("Golang")
@@ -35,11 +34,14 @@ func main()  {
 	//fmt.Println(d)
 
 
+	path := "E:/GoPath/src/Go_study_again/go.txt"
 	file1 := CreateFile1(path)
 	fmt.Println(file1)
 
 	jsonFile := CreateJsonFile()
 	fmt.Println(jsonFile)
+
+	ReadJson()
 }
 
 func CreateFile1(path string) error  {
@@ -88,12 +90,37 @@ func CreateJsonFile() error {
 	encoder := json.NewEncoder(file)
 
 	//编码
-	err := encoder.Encode(info)
-	if err != nil {
-		fmt.Println("编码错误：",err)
+	e = encoder.Encode(info)
+	if e != nil {
+		fmt.Println("编码错误：",e)
 	} else {
 		fmt.Println("编码成功")
 	}
 
-	return nil
+	return e
+}
+
+func ReadJson() error {
+	file, e := os.Open("E:/GoPath/src/Go_study_again/info.json")
+	if e != nil {
+		fmt.Println("文件打开失败")
+		return e
+	}
+	defer file.Close()
+
+	//创建切片缓冲区
+	var info []Website
+	//创建解码器
+	decoder := json.NewDecoder(file)
+	e = decoder.Decode(&info)//存入缓冲区
+
+	if e != nil {
+		fmt.Println("解码失败")
+	} else {
+		fmt.Println("解码成功")
+		fmt.Println(info)
+	}
+
+	return e
+
 }
