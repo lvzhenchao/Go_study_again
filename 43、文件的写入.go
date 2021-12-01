@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"os"
@@ -36,6 +37,9 @@ func main()  {
 
 	file1 := CreateFile1(path)
 	fmt.Println(file1)
+
+	jsonFile := CreateJsonFile()
+	fmt.Println(jsonFile)
 }
 
 func CreateFile1(path string) error  {
@@ -56,5 +60,40 @@ func CreateFile1(path string) error  {
 		return err
 	}
 	file.WriteAt([]byte("123456"),n)
+	return nil
+}
+
+type Website struct {
+	Name   string `xml:"name,attr"`
+	Url    string
+	Course []string
+}
+
+//生成json格式的文件
+func CreateJsonFile() error {
+	info := []Website{{
+		"Golang", "http://c.biancheng.net/golang/",
+		[]string{"http://c.biancheng.net/cplus/", "http://c.biancheng.net/linux_tutorial/"}},
+		{"Java", "http://c.biancheng.net/java/",
+			[]string{"http://c.biancheng.net/socket/", "http://c.biancheng.net/python/"}}}
+
+	file, e := os.Create("E:/GoPath/src/Go_study_again/info.json")
+	if e != nil {
+		fmt.Println("文件创建失败")
+		return e
+	}
+	defer file.Close()
+
+	//创建json编码器
+	encoder := json.NewEncoder(file)
+
+	//编码
+	err := encoder.Encode(info)
+	if err != nil {
+		fmt.Println("编码错误：",err)
+	} else {
+		fmt.Println("编码成功")
+	}
+
 	return nil
 }
