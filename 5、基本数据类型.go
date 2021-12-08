@@ -21,6 +21,7 @@ func main()  {
 	var score2 float64 = 89.8
 	sum := score1 + float32(score2)
 	fmt.Println(score1, score2, sum)//浮点值的加减法 后面会加上不确定位
+	fmt.Printf("score1的类型：%T,score2的类型：%T,sum的类型：%T\n", score1, score2, sum)
 	fmt.Println("----------")
 
 
