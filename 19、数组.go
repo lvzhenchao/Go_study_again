@@ -7,6 +7,8 @@ func main()  {
 
 	//最完整、规范的写法
 	var arr1[3]int = [3]int{1,2,3}
+	fmt.Println(arr1[0])//打印第一个元素
+	fmt.Println(arr1[len(arr1)-1])//打印最后一个元素
 
 	//简写版
 	var arr2 = [3]int{5,6,7}
