@@ -21,6 +21,14 @@ func main()  {
 
 	fmt.Println(arr1,arr2,arr3,arr4)//[1 2 3] [5 6 7] [8 9 10] [0 100 0]
 
+	fmt.Println("--相关补充--")
+	arr5 := [...]int{1,2,3}//"..."数组长度的位置出现省略号,则【表示数组的长度】是根据初始化值的个数来计算
+	fmt.Println(arr5)
+	arr5[2] = 6//不能给超出数组长度的位置赋值，偏移量
+	fmt.Println(arr5)
+
+
+
 
 
 }
