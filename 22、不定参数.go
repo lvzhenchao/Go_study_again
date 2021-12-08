@@ -25,7 +25,7 @@ func main()  {
 	params1(s...)//记得加3个小点儿
 
 	fmt.Println("---混合类型不定参数---")
-	mixType := make([]interface{},5)
+	mixType := make([]interface{},0)
 	mixType = append(mixType, "mix1", 23, true,12.3)
 	params2(mixType...)
 }
