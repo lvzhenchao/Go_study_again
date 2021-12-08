@@ -14,6 +14,13 @@ func main()  {
 	//1、自动推导类型创建
 	s1 := []int{1,2,3}
 	fmt.Println(s1)
+	fmt.Println(s1[1:])//[2 3]
+	fmt.Println(s1[1:2])//[2]
+	fmt.Println(s1[:1])//[1]
+	fmt.Println(s1[:])//[1 2 3]表示原有的切片
+
+	fmt.Println(s1[0:0])//生成的切片将变空[]
+	fmt.Println(s1)
 
 	//2、借助make创建slice；格式make(切片类型，长度，容量)
 	s2 := make([]int, 5,10)
