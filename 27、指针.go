@@ -7,7 +7,7 @@ import "fmt"
 
 //Go语言中的 new 和 make 主要区别如下：
 	//make 只能用来分配及初始化类型为 slice、map、chan 的数据。new 可以分配任意类型的数据；
-	//new 分配返回的是指针，即类型 *Type。make 返回引用，即 Type；
+	//new 分配返回的是指针，即类型 *Type。make 返回引用，即 Type；  new 只分配内存
 	//new 分配的空间被清零。make 分配空间后，会进行初始化。
 
 type student struct {
@@ -42,7 +42,7 @@ func main()  {
 	p3.name = "小明"
 	p3.id = 1
 	p3.score = 40
-	fmt.Printf("指针变量p3的值为：%v, *p3的值为：%v\n", p3, *p3)
+	fmt.Printf("指针变量p3的的类型：%T,p3的值为：%v, *p3的值为：%v\n", p3, p3, *p3)
 
 	p4 :=new(student)
 	fmt.Printf("指针变量结构体%v\n", p4)
