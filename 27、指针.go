@@ -6,26 +6,26 @@ import "fmt"
 //指针变量：存放地址的变量 new(type)  例如：不同类型的指针 *int *string *bool
 
 //Go语言中的 new 和 make 主要区别如下：
-	//make 只能用来分配及初始化类型为 slice、map、chan 的数据。new 可以分配任意类型的数据；
-	//new 分配返回的是指针，即类型 *Type。make 返回引用，即 Type；  new 只分配内存
-	//new 分配的空间被清零。make 分配空间后，会进行初始化。
+//make 只能用来分配及初始化类型为 slice、map、chan 的数据。new 可以分配任意类型的数据；
+//new 分配返回的是指针，即类型 *Type。make 返回引用，即 Type；  new 只分配内存
+//new 分配的空间被清零。make 分配空间后，会进行初始化。
 
 type student struct {
-	id int
-	name string
+	id    int
+	name  string
 	score float64
 }
 
-func main()  {
+func main() {
 	var a int = 100
 	fmt.Println(&a)
 
 	p := &a
-	fmt.Printf("p的变量类型：%T,值为：%v, *P的值为：%v\n",p,p,*p)//p的变量类型：*int,值为：0xc0000ac058, *P的值为：100
+	fmt.Printf("p的变量类型：%T,值为：%v, *P的值为：%v\n", p, p, *p) //p的变量类型：*int,值为：0xc0000ac058, *P的值为：100
 	fmt.Println("=====指针变量的含义=====")
 	p1 := new(string)
 	*p1 = "name"
-	fmt.Println(p1, *p1)//0xc000088230 name
+	fmt.Println(p1, *p1) //0xc000088230 name
 
 	fmt.Println("===指针的使用===")
 	str := "Go语言是一门很强大的编程语言"
@@ -44,12 +44,16 @@ func main()  {
 	p3.score = 40
 	fmt.Printf("指针变量p3的的类型：%T,p3的值为：%v, *p3的值为：%v\n", p3, p3, *p3)
 
-	p4 :=new(student)
+	p4 := new(student)
 	fmt.Printf("指针变量结构体%v\n", p4)
 
 	p5 := new(int)
-	fmt.Printf("指针变量整形%T,%v",p5,p5)
+	fmt.Printf("指针变量整形%T,%v", p5, p5)
 
-
+	//取地址操作符&和取值操作符*是一对互补操作符，&取出地址，*根据地址取出地址指向的值。
+	//变量、指针地址、指针变量、取地址、取值的相互关系和特性如下：
+	//对变量进行取地址操作使用&操作符，可以获得这个变量的指针变量。
+	//指针变量的值是指针地址。
+	//对指针变量进行取值操作使用*操作符，可以获得指针变量指向的原变量的值。
 
 }
