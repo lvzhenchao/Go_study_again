@@ -4,7 +4,7 @@ import "fmt"
 
 //浮点类型
 
-func main()  {
+func main() {
 	//浮点类型【小数类型】
 	//float
 	var price float32 = 99.99
@@ -14,24 +14,26 @@ func main()  {
 	var b float64 = 345.6
 	fmt.Println(b)
 
-	b = float64(a)//类型转换
+	b = float64(a) //类型转换
 	fmt.Println(b)
 
 	var score1 float32 = 98.9
 	var score2 float64 = 89.8
 	sum := score1 + float32(score2)
-	fmt.Println(score1, score2, sum)//浮点值的加减法 后面会加上不确定位
+	fmt.Println(score1, score2, sum) //浮点值的加减法 后面会加上不确定位
 	fmt.Printf("score1的类型：%T,score2的类型：%T,sum的类型：%T\n", score1, score2, sum)
 	fmt.Println("----------")
 
-
 	//字符类型
-	var ch byte	//声明字符类型，关键字byte
-	ch = 'a'	//单引号，字符;字符类型用单引号括起来，【只能写一个字符】
+	//Go语言的字符有以下两种：
+	//一种是 uint8 类型，或者叫 byte 型，代表了 ASCII 码的一个字符。
+	//另一种是 rune 类型，代表一个 UTF-8 字符，当需要处理中文、日文或者其他复合字符时，则需要用到 rune 类型。rune 类型等价于 int32 类型。
+	var ch byte //声明字符类型，关键字byte
+	ch = 'a'    //单引号，字符;字符类型用单引号括起来，【只能写一个字符】
 	fmt.Printf("%c", ch)
 	fmt.Println()
-	fmt.Println(ch)//ascll码 97
-	fmt.Println('b')//98
+	fmt.Println(ch)  //ascll码 97
+	fmt.Println('b') //98
 	fmt.Println("----------")
 
 	//字符串类型
